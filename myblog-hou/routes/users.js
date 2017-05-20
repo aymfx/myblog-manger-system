@@ -8,5 +8,6 @@ router.post('/data', dataCtrl.create);
 router.post('/list', dataCtrl.list);
 router.delete('/:id', dataCtrl.remove);
 router.post('/removes', dataCtrl.removes);
-router.put('/data/:id', dataCtrl.update)
+router.put('/data/:id', dataCtrl.update);
+router.post('/login', dataCtrl.login);
 module.exports = router;

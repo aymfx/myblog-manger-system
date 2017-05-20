@@ -14,6 +14,12 @@ var users = require('./routes/users');
 var blog = require('./routes/blog');
 var cate = require('./routes/cate');
 var comment = require('./routes/comment');
+var upload = require('./routes/upload');
+
+
+
+
+
 var mongoose = require('mongoose'); // 引入mongoose模块
 
 //链接
@@ -45,6 +51,7 @@ app.use('/users', users);
 app.use('/blog', blog);
 app.use('/cate', cate);
 app.use('/comment', comment);
+app.use('/upload', upload);
 
 
 // catch 404 and forward to error handler

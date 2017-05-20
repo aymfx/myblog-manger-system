@@ -67,3 +67,10 @@ exports.update = function(req, res, next) {
         res.json(data);
     })
 }
+
+//登录
+exports.login = function(req, res, next) {
+    User.findOne({ "name": req.body.name, "pwd": req.body.pwd }, function(err, data) {
+        res.json(data);
+    })
+}

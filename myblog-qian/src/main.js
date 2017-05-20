@@ -7,7 +7,8 @@ import iview from 'iview'
 import 'iview/dist/styles/iview.css';
 //引入路由
 import VueRouter from 'vue-router';
-import { routes } from './routers'
+import { routes } from './routers';
+import { store } from './store'
 //引入axios
 import axios from 'axios';
 import VueAxios from 'vue-axios';
@@ -30,5 +31,6 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App)
 })
