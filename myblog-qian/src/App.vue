@@ -41,6 +41,12 @@
                         <span class="layout-text">上传</span>
                     </Menu-item>
                      </router-link>
+                     <router-link :to="{name:'echart'}" active-class="active">
+                     <Menu-item name="6">
+                        <Icon type="ios-upload" :size="iconSize"></Icon>
+                        <span class="layout-text">图表</span>
+                    </Menu-item>
+                     </router-link>
                 </Menu>
             </i-col>
             <i-col :span="spanRight">

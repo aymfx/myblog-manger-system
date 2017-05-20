@@ -7,17 +7,13 @@
         </Breadcrumb>
     </div>
     <div id="btns">
-            <Button type="info" @click="modal1 =true">添加</Button>
-            <Button type="warning" @click="removes">删除</Button>
             <Input icon="search" placeholder="请输入..." v-model="filter.name" style="width:200px;"></Input>
-            <Button type="ghost" @click="getData">搜索数据</Button>
-        
+            <Button type="ghost" @click="getData" class="blog-search">搜索数据</Button>
             <Modal v-model="modal1">
                 <p slot="header" style="color:#f60;text-align:center">
                     <Icon type="information-circled"></Icon>
                     <span>添加数据</span>
                 </p>
-                
                 <div slot="footer">                  
                 </div>
                  <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
@@ -35,8 +31,11 @@
                 </Form>
             </Modal>
              <Table border :columns="columns" :data="list" @on-selection-change="handleSelectChange"></Table>
-             <Page :total="filter.total" :current="filter.page" :page-size="filter.limit" @on-change="changePage" size="small" show-elevator show-sizer></Page>
-
+             <Page :total="filter.total" :current="filter.page" :page-size="filter.limit" @on-change="changePage" size="small" show-elevator show-sizer class="blog-page"></Page>
+             <div class="blog">
+                <Button type="info" @click="modal1 =true">添加</Button>
+                <Button type="warning" @click="removes">删除</Button>
+             </div>
         </div>
 </div>
 </template>
@@ -118,3 +117,19 @@
         }
     }
 </script>
+<style>
+    .blog-page{
+        float:left;
+        margin-top:30px;
+    }
+    .blog{
+        float:right;
+        margin-top:30px;
+    }
+    #btns{
+       overflow:hidden;
+    }
+    .blog-search{
+        margin:20px 0;
+    }
+</style>

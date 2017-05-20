@@ -97,7 +97,7 @@ export default {
                     title: '警告',
                     content: '确认删除?',
                     onOk: () => {
-                        _this.$http.post(`http://localhost:3000${_this.model}/removes`, { ids: _this.ids }).then(function(res) {
+                        _this.$http.post(`http://localhost:3000/${_this.model}/removes`, { ids: _this.ids }).then(function(res) {
                             _this.getData();
                             _this.$Message.info("删除成功");
 
